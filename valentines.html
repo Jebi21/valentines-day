@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>For You 💖</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #111 0%, #000 60%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+button {
+  padding: 14px 30px;
+  font-size: 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff4d6d, #ff85a1);
+  color: white;
+  box-shadow: 0 0 25px rgba(255, 77, 109, 0.6);
+  transition: transform 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.hidden {
+  display: none;
+}
+
+img {
+  width: 260px;
+  max-width: 80vw;
+  margin: 24px auto;
+  display: block;
+  filter: drop-shadow(0 0 25px rgba(255, 0, 80, 0.6));
+}
+
+.message {
+  font-size: 28px;
+  margin-top: 16px;
+  animation: pop 0.6s ease forwards;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  60% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- QUESTION PART -->
+  <div id="question">
+    <h1>Will you be my Valentine? 💘</h1>
+
+    <!-- Minion appears ONLY here -->
+   <div class="tenor-gif-embed" data-postid="8795433616278834350" data-share-method="host" data-aspect-ratio="0.935829" data-width="100%"><a href="https://tenor.com/view/reaction-meme-stan-twt-funny-buckspendragon-minion-gif-8795433616278834350">Reaction Meme Stan Twt GIF</a>from <a href="https://tenor.com/search/reaction+meme-gifs">Reaction Meme GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+    <div class="buttons">
+      <button id="yesBtn">Yes</button>
+      <button id="noBtn">No</button>
+    </div>
+  </div>
+
+  <!-- FINAL MESSAGE -->
+  <div id="final" class="hidden">
+    <div class="message">I love you so much, my love! Happy Valentines Day!!! 💕</div>
+  </div>
+
+</div>
+
+<script>
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+const question = document.getElementById("question");
+const final = document.getElementById("final");
+
+yesBtn.onclick = () => {
+  question.classList.add("hidden");
+  final.classList.remove("hidden");
+};
+
+noBtn.onmouseover = () => {
+  const x = Math.random() * 200 - 100;
+  const y = Math.random() * 200 - 100;
+  noBtn.style.transform = `translate(${x}px, ${y}px)`;
+};
+</script>
+
+</body>
+</html>
